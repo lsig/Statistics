@@ -16545,6 +16545,13 @@ DOF.  In Excel use CHISQ.INV(RAND(),k)</p>
 <li>But we know that the number $r = \frac{(n - 1)s^2}{\sigma^2}$ ~ $\chi^2_{n - 1}$</li>
 <li>See <strong>Example 5.28</strong> in the text book</li>
 </ul>
+<p>To find the confidence interval of sigma we use:</p>
+<p>$5.629 \lt \frac{(n - 1)s^2}{\sigma^2} \lt 26.119$ where the lower and upper 0.025 points of $\chi^2_{14}$ are:</p>
+<p>$\chi^2_{14, 0.975} = 26.119$</p>
+<p>$\chi^2_{14, 0.025} = 5.629$</p>
+<p>$\Rightarrow \frac{(n - 1)s^2}{26.119} \lt \sigma^2 \lt \frac{(n - 1)s^2}{5.629}$ take squareroot of both sides to get 95% CI for sigma</p>
+<p>In general for any CI of sigma:</p>
+<p>$(\frac{(n - 1)s^2}{\chi_{n - 1, \frac{\alpha}{2}}^2}, \frac{(n - 1)s^2}{\chi_{n - 1, 1 - \frac{\alpha}{2}}^2})$</p>
 
 </div>
 </div>
@@ -20815,6 +20822,135 @@ CI: 66.7
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-5.8.6">Problem 5.8.6<a class="anchor-link" href="#Problem-5.8.6">&#182;</a></h3><p>Following are weights, in pounds, of 12 two-month-old baby girls. Assume that the population is normally distributed.</p>
+<p>a) Find the sample standard deviation s.</p>
+<p>b) Construct a 95% confidence interval for population standard deviation σ.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;./datasets/Ch5/ex5-8-6.csv&quot;</span><span class="p">)</span>
+
+<span class="n">sample_mean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">std_dev</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">sigma_5_8_6</span> <span class="o">=</span> <span class="n">std_dev</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">df</span><span class="p">))</span>
+
+<span class="n">low_interval</span> <span class="o">=</span> <span class="n">sample_mean</span> <span class="o">-</span> <span class="mf">1.96</span> <span class="o">*</span> <span class="n">sigma_5_8_6</span>
+<span class="n">high_interval</span> <span class="o">=</span> <span class="n">sample_mean</span> <span class="o">+</span> <span class="mf">1.96</span> <span class="o">*</span> <span class="n">sigma_5_8_6</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;std.dev: </span><span class="si">{</span><span class="n">std_dev</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;95% CI: [</span><span class="si">{</span><span class="n">low_interval</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">high_interval</span><span class="o">.</span><span class="n">to_string</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>std.dev: 1.798172
+95% CI: [10.379255, 12.414079]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-5.8.10">Problem 5.8.10<a class="anchor-link" href="#Problem-5.8.10">&#182;</a></h3><p>A sample of size 101 from a normal population has sample standard deviation s = 40. The lower and upper 0.025 points of the $\chi^2_{100}$  distribution are $\chi^2_{[100, 0.975]}= 74.222$ and $\chi^2_{[100, 0.025]} = 129.561$. Use these values to construct a 95% confidence interval for $\sigma$.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">101</span>
+<span class="n">s</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="n">higher_chi</span> <span class="o">=</span> <span class="mf">74.222</span>
+<span class="n">lower_chi</span> <span class="o">=</span> <span class="mf">129.561</span>
+
+<span class="n">lower_interval</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(((</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">lower_chi</span><span class="p">)</span>
+<span class="n">higher_interval</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(((</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="o">*</span> <span class="n">s</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="n">higher_chi</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;95% CI for sigma: [</span><span class="si">{</span><span class="n">lower_interval</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">higher_interval</span><span class="si">}</span><span class="s1">]&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>95% CI for sigma: [35.14170636942747, 46.42946345728505]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Problem-6.1.6">Problem 6.1.6<a class="anchor-link" href="#Problem-6.1.6">&#182;</a></h3><p>A certain type of stainless steel powder is supposed to have a mean particle diameter of μ = 15 μm. A random sample of 87 particles had a mean diameter of 15.2 μm, with a standard deviation of 1.8 μm. A test is made of $H_0$: μ = 15 versus $H_1$: μ ≠ 15.</p>
 <p>a) Find the P-value.</p>
 <p>See below</p>
@@ -20886,6 +21022,77 @@ that it differs from 15 μm? Explain your reasoning.</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-6.1.7">Problem 6.1.7<a class="anchor-link" href="#Problem-6.1.7">&#182;</a></h3><p>In a test of corrosion resistance, a sample of 60 Incoloy steel specimens were immersed in acidified brine for four hours, after which each specimen had developed a number of corrosive pits. The maximum pit depth was measured for each specimen. The mean depth was 850 μm with a standard deviation of 153 μm. The specification is that the population mean depth μ is less than 900 μm.</p>
+<p>a. Find the P-value for testing H0: μ ≥ 900 versus H1: μ &lt; 900.</p>
+<p>b. Do you believe it is plausible that the mean depth is at least 900μm, or are you
+convinced that it is less than 900μm? Explain.</p>
+<p>We reject H0, since the probability of observing a sample mean as small as 850 that was actually observed is 0.0057. Therefore we except H1.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span> 
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="n">n</span> <span class="o">=</span> <span class="mi">60</span> 
+<span class="n">sample_mean_6_1_7</span><span class="o">=</span> <span class="mi">850</span>
+<span class="n">std_6_1_7</span> <span class="o">=</span> <span class="mi">153</span>
+
+<span class="n">mu_6_1_7</span> <span class="o">=</span> <span class="mi">900</span>
+
+<span class="n">sigma_6_1_7</span> <span class="o">=</span> <span class="n">std_6_1_7</span> <span class="o">/</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">sample_mean_6_1_7</span> <span class="o">-</span> <span class="n">mu_6_1_7</span><span class="p">)</span> <span class="o">/</span> <span class="n">sigma_6_1_7</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value: </span><span class="si">{</span><span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span> <span class="c1">#why?</span>
+
+<span class="c1">#plt.hist(norm.cdf(z,0, 1))</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>p-value: 0.005681031317330347
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h3 id="Problem-6.3.5">Problem 6.3.5<a class="anchor-link" href="#Problem-6.3.5">&#182;</a></h3><p>In a survey of 500 residents in a certain town, 274 said they were opposed to constructing a new shopping mall. Can you conclude that more than half of the residents in this town are opposed to constructing a new shopping mall?</p>
 <p>$H_0: p \leq 0.5$ $\quad H_1: p \gt0.5$</p>
 
@@ -20939,6 +21146,73 @@ that it differs from 15 μm? Explain your reasoning.</p>
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
 <pre>p-value: 0.01591156369324498
 So we can conclude that it is likely the survay is statisticly significant since the p-value is &lt; 0.05
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-6.3.8">Problem 6.3.8<a class="anchor-link" href="#Problem-6.3.8">&#182;</a></h3><p>A grinding machine will be qualified for a particular task if it can be shown to produce less than 8% defective parts. In a random sample of 300 parts, 12 were defective. On the basis of these data, can the machine be qualified?</p>
+<p>$H_0$ : $p \geq 0.08$</p>
+<p>$H_1$ : $p &lt; 0.08$</p>
+<p>p-value = 0.0053 (see calculations below)</p>
+<p>The p-value is slightly larger than then the standard but I think it is safe to assume the machine is qulified, and thus reject $H_0$. But best would be to increase the sample size to get a clearer picture. Also this is only a one sided test so it gives more room for inaccuracies.</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">norm</span>
+<span class="n">n</span> <span class="o">=</span> <span class="mi">300</span>
+<span class="n">k</span> <span class="o">=</span> <span class="mi">12</span> 
+<span class="n">p</span> <span class="o">=</span> <span class="mf">0.08</span>
+
+<span class="n">p_hat</span> <span class="o">=</span> <span class="n">k</span> <span class="o">/</span> <span class="n">n</span>
+<span class="n">sigma</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">((</span><span class="n">p</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">p</span><span class="p">))</span> <span class="o">/</span> <span class="n">n</span><span class="p">)</span>
+
+<span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="n">p_hat</span> <span class="o">-</span> <span class="n">p</span><span class="p">)</span> <span class="o">/</span> <span class="n">sigma</span>
+
+<span class="n">p_value</span> <span class="o">=</span> <span class="n">norm</span><span class="o">.</span><span class="n">cdf</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value: </span><span class="si">{</span><span class="n">p_value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>p-value: 0.005328187360645716
 </pre>
 </div>
 </div>
