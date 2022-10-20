@@ -14748,7 +14748,7 @@ The length can be:  to short, OK, or too long.</p>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;./datasets/Ch2/table2-1.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;datasets/Ch2/table2-1.csv&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">:</span><span class="s1">&#39;Too Short&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="s1">&#39;OK&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">:</span><span class="s1">&#39;Too Long&#39;</span><span class="p">})</span> 
 </pre></div>
 
@@ -14767,86 +14767,58 @@ The length can be:  to short, OK, or too long.</p>
 <div class="jp-OutputArea-child">
 
     
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
 
 
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">FileNotFoundError</span>                         Traceback (most recent call last)
-<span class="ansi-green-intense-fg ansi-bold">/Users/logisigurdarson/Documents/HR/2.ár/haustönn/Tölfræði/Workbook/Statistics/Workbook.ipynb Cell 2</span> in <span class="ansi-cyan-fg">&lt;cell line: 2&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell:/Users/logisigurdarson/Documents/HR/2.%C3%A1r/haust%C3%B6nn/T%C3%B6lfr%C3%A6%C3%B0i/Workbook/Statistics/Workbook.ipynb#W1sZmlsZQ%3D%3D?line=0&#39;&gt;1&lt;/a&gt;</span> import pandas as pd 
-<span class="ansi-green-fg">----&gt; &lt;a href=&#39;vscode-notebook-cell:/Users/logisigurdarson/Documents/HR/2.%C3%A1r/haust%C3%B6nn/T%C3%B6lfr%C3%A6%C3%B0i/Workbook/Statistics/Workbook.ipynb#W1sZmlsZQ%3D%3D?line=1&#39;&gt;2&lt;/a&gt;</span> df = pd.read_csv(&#39;./datasets/Ch2/table2-1.csv&#39;, header=0)
-<span class="ansi-green-intense-fg ansi-bold">      &lt;a href=&#39;vscode-notebook-cell:/Users/logisigurdarson/Documents/HR/2.%C3%A1r/haust%C3%B6nn/T%C3%B6lfr%C3%A6%C3%B0i/Workbook/Statistics/Workbook.ipynb#W1sZmlsZQ%3D%3D?line=2&#39;&gt;3&lt;/a&gt;</span> df.rename(index={0:&#39;Too Short&#39;, 1:&#39;OK&#39;, 2:&#39;Too Long&#39;})
 
-File <span class="ansi-green-fg">~/opt/anaconda3/envs/datascience/lib/python3.10/site-packages/pandas/util/_decorators.py:311</span>, in <span class="ansi-cyan-fg">deprecate_nonkeyword_arguments.&lt;locals&gt;.decorate.&lt;locals&gt;.wrapper</span><span class="ansi-blue-fg">(*args, **kwargs)</span>
-<span class="ansi-green-intense-fg ansi-bold">    305</span> if len(args) &gt; num_allow_args:
-<span class="ansi-green-intense-fg ansi-bold">    306</span>     warnings.warn(
-<span class="ansi-green-intense-fg ansi-bold">    307</span>         msg.format(arguments=arguments),
-<span class="ansi-green-intense-fg ansi-bold">    308</span>         FutureWarning,
-<span class="ansi-green-intense-fg ansi-bold">    309</span>         stacklevel=stacklevel,
-<span class="ansi-green-intense-fg ansi-bold">    310</span>     )
-<span class="ansi-green-fg">--&gt; 311</span> return func(*args, **kwargs)
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-File <span class="ansi-green-fg">~/opt/anaconda3/envs/datascience/lib/python3.10/site-packages/pandas/io/parsers/readers.py:680</span>, in <span class="ansi-cyan-fg">read_csv</span><span class="ansi-blue-fg">(filepath_or_buffer, sep, delimiter, header, names, index_col, usecols, squeeze, prefix, mangle_dupe_cols, dtype, engine, converters, true_values, false_values, skipinitialspace, skiprows, skipfooter, nrows, na_values, keep_default_na, na_filter, verbose, skip_blank_lines, parse_dates, infer_datetime_format, keep_date_col, date_parser, dayfirst, cache_dates, iterator, chunksize, compression, thousands, decimal, lineterminator, quotechar, quoting, doublequote, escapechar, comment, encoding, encoding_errors, dialect, error_bad_lines, warn_bad_lines, on_bad_lines, delim_whitespace, low_memory, memory_map, float_precision, storage_options)</span>
-<span class="ansi-green-intense-fg ansi-bold">    665</span> kwds_defaults = _refine_defaults_read(
-<span class="ansi-green-intense-fg ansi-bold">    666</span>     dialect,
-<span class="ansi-green-intense-fg ansi-bold">    667</span>     delimiter,
-<span class="ansi-green-fg">   (...)</span>
-<span class="ansi-green-intense-fg ansi-bold">    676</span>     defaults={&#34;delimiter&#34;: &#34;,&#34;},
-<span class="ansi-green-intense-fg ansi-bold">    677</span> )
-<span class="ansi-green-intense-fg ansi-bold">    678</span> kwds.update(kwds_defaults)
-<span class="ansi-green-fg">--&gt; 680</span> return _read(filepath_or_buffer, kwds)
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-File <span class="ansi-green-fg">~/opt/anaconda3/envs/datascience/lib/python3.10/site-packages/pandas/io/parsers/readers.py:575</span>, in <span class="ansi-cyan-fg">_read</span><span class="ansi-blue-fg">(filepath_or_buffer, kwds)</span>
-<span class="ansi-green-intense-fg ansi-bold">    572</span> _validate_names(kwds.get(&#34;names&#34;, None))
-<span class="ansi-green-intense-fg ansi-bold">    574</span> # Create the parser.
-<span class="ansi-green-fg">--&gt; 575</span> parser = TextFileReader(filepath_or_buffer, **kwds)
-<span class="ansi-green-intense-fg ansi-bold">    577</span> if chunksize or iterator:
-<span class="ansi-green-intense-fg ansi-bold">    578</span>     return parser
-
-File <span class="ansi-green-fg">~/opt/anaconda3/envs/datascience/lib/python3.10/site-packages/pandas/io/parsers/readers.py:934</span>, in <span class="ansi-cyan-fg">TextFileReader.__init__</span><span class="ansi-blue-fg">(self, f, engine, **kwds)</span>
-<span class="ansi-green-intense-fg ansi-bold">    931</span>     self.options[&#34;has_index_names&#34;] = kwds[&#34;has_index_names&#34;]
-<span class="ansi-green-intense-fg ansi-bold">    933</span> self.handles: IOHandles | None = None
-<span class="ansi-green-fg">--&gt; 934</span> self._engine = self._make_engine(f, self.engine)
-
-File <span class="ansi-green-fg">~/opt/anaconda3/envs/datascience/lib/python3.10/site-packages/pandas/io/parsers/readers.py:1218</span>, in <span class="ansi-cyan-fg">TextFileReader._make_engine</span><span class="ansi-blue-fg">(self, f, engine)</span>
-<span class="ansi-green-intense-fg ansi-bold">   1214</span>     mode = &#34;rb&#34;
-<span class="ansi-green-intense-fg ansi-bold">   1215</span> # error: No overload variant of &#34;get_handle&#34; matches argument types
-<span class="ansi-green-intense-fg ansi-bold">   1216</span> # &#34;Union[str, PathLike[str], ReadCsvBuffer[bytes], ReadCsvBuffer[str]]&#34;
-<span class="ansi-green-intense-fg ansi-bold">   1217</span> # , &#34;str&#34;, &#34;bool&#34;, &#34;Any&#34;, &#34;Any&#34;, &#34;Any&#34;, &#34;Any&#34;, &#34;Any&#34;
-<span class="ansi-green-fg">-&gt; 1218</span> self.handles = get_handle(  # type: ignore[call-overload]
-<span class="ansi-green-intense-fg ansi-bold">   1219</span>     f,
-<span class="ansi-green-intense-fg ansi-bold">   1220</span>     mode,
-<span class="ansi-green-intense-fg ansi-bold">   1221</span>     encoding=self.options.get(&#34;encoding&#34;, None),
-<span class="ansi-green-intense-fg ansi-bold">   1222</span>     compression=self.options.get(&#34;compression&#34;, None),
-<span class="ansi-green-intense-fg ansi-bold">   1223</span>     memory_map=self.options.get(&#34;memory_map&#34;, False),
-<span class="ansi-green-intense-fg ansi-bold">   1224</span>     is_text=is_text,
-<span class="ansi-green-intense-fg ansi-bold">   1225</span>     errors=self.options.get(&#34;encoding_errors&#34;, &#34;strict&#34;),
-<span class="ansi-green-intense-fg ansi-bold">   1226</span>     storage_options=self.options.get(&#34;storage_options&#34;, None),
-<span class="ansi-green-intense-fg ansi-bold">   1227</span> )
-<span class="ansi-green-intense-fg ansi-bold">   1228</span> assert self.handles is not None
-<span class="ansi-green-intense-fg ansi-bold">   1229</span> f = self.handles.handle
-
-File <span class="ansi-green-fg">~/opt/anaconda3/envs/datascience/lib/python3.10/site-packages/pandas/io/common.py:786</span>, in <span class="ansi-cyan-fg">get_handle</span><span class="ansi-blue-fg">(path_or_buf, mode, encoding, compression, memory_map, is_text, errors, storage_options)</span>
-<span class="ansi-green-intense-fg ansi-bold">    781</span> elif isinstance(handle, str):
-<span class="ansi-green-intense-fg ansi-bold">    782</span>     # Check whether the filename is to be opened in binary mode.
-<span class="ansi-green-intense-fg ansi-bold">    783</span>     # Binary mode does not support &#39;encoding&#39; and &#39;newline&#39;.
-<span class="ansi-green-intense-fg ansi-bold">    784</span>     if ioargs.encoding and &#34;b&#34; not in ioargs.mode:
-<span class="ansi-green-intense-fg ansi-bold">    785</span>         # Encoding
-<span class="ansi-green-fg">--&gt; 786</span>         handle = open(
-<span class="ansi-green-intense-fg ansi-bold">    787</span>             handle,
-<span class="ansi-green-intense-fg ansi-bold">    788</span>             ioargs.mode,
-<span class="ansi-green-intense-fg ansi-bold">    789</span>             encoding=ioargs.encoding,
-<span class="ansi-green-intense-fg ansi-bold">    790</span>             errors=errors,
-<span class="ansi-green-intense-fg ansi-bold">    791</span>             newline=&#34;&#34;,
-<span class="ansi-green-intense-fg ansi-bold">    792</span>         )
-<span class="ansi-green-intense-fg ansi-bold">    793</span>     else:
-<span class="ansi-green-intense-fg ansi-bold">    794</span>         # Binary mode
-<span class="ansi-green-intense-fg ansi-bold">    795</span>         handle = open(handle, ioargs.mode)
-
-<span class="ansi-red-fg">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;./datasets/Ch2/table2-1.csv&#39;</pre>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Too Thin</th>
+      <th>OK</th>
+      <th>Too Thick</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Too Short</th>
+      <td>10</td>
+      <td>3</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>OK</th>
+      <td>38</td>
+      <td>900</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>Too Long</th>
+      <td>2</td>
+      <td>25</td>
+      <td>13</td>
+    </tr>
+  </tbody>
+</table>
 </div>
+</div>
+
 </div>
 
 </div>
@@ -18754,6 +18726,251 @@ p-value: 0.003999985228619669
 
 </div>
 
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="The-best-line-problem">The best line problem<a class="anchor-link" href="#The-best-line-problem">&#182;</a></h3><p>The linear regression is the mathematical procedure for the linear fit or the best line or the least-squares line for a set of pairs of data points .</p>
+<p>Example from section 7.2 of the textbook: The relation between the length of a spring and a hanging mass. Data file table7-1.csv
+The linear fit or best line has the form:</p>
+<p>$y=\beta_0 +\beta1x$</p>
+<p>For the present data:</p>
+<p>$y = 4.9997 + 0.2046x$</p>
+<p>Questions:</p>
+<ul>
+<li>How are the coefficients β calculated? </li>
+<li>What is their meaning? </li>
+<li>What if the data does not have an obvious trend?</li>
+<li>See next part of this lecture package</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pylab</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">linregress</span>
+
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/Ch7/table7-1.csv&quot;</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Weight (x)&#39;</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Measured Length (y)&#39;</span><span class="p">]</span>
+
+<span class="n">reg</span> <span class="o">=</span> <span class="n">linregress</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">reg</span><span class="p">)</span> 
+<span class="n">slope</span> <span class="o">=</span> <span class="n">reg</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">intercept</span> <span class="o">=</span> <span class="n">reg</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span><span class="n">linestyle</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Weight (lb)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Measured Length (in)&#39;</span><span class="p">)</span>
+
+<span class="n">best_line</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;y = </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">b</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s1"> + </span><span class="si">{</span><span class="nb">round</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="si">}</span><span class="s1">x&#39;</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">5.7</span><span class="p">,</span> <span class="n">best_line</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>LinregressResult(slope=0.20462406015037599, intercept=4.999714285714285, rvalue=0.9743193083175269, pvalue=4.2037584649203017e-13, stderr=0.011146311882917918, intercept_stderr=0.02477391625966531)
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>Text(0.25, 5.7, &#39;y = 4.9997 + 0.2046x&#39;)</pre>
+</div>
+
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+
+
+<div class="jp-RenderedImage jp-OutputArea-output ">
+<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAYIAAAEGCAYAAABo25JHAAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjUuMSwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy/YYfK9AAAACXBIWXMAAAsTAAALEwEAmpwYAAAw6UlEQVR4nO3deXhU5fXA8e+BgCKCUUCWVECRTZawRJBFAVFwoyCiogjUqoha1xbX+rO1taJYF9wQawVtxYoQtIIgCha1WggG2RRFRGnYgggEiUCS8/vjndCQTCY3y507mTmf58mTmXvv3Hsyypy573vvOaKqGGOMSVw1gg7AGGNMsCwRGGNMgrNEYIwxCc4SgTHGJDhLBMYYk+CSgg6gvBo2bKgtW7YMOgxjjKlWli9fvkNVG4VbV+0SQcuWLcnIyAg6DGOMqVZE5NvS1tnQkDHGJDhLBMYYk+AsERhjTIKzRGCMMQnOEoExxiQ4X68aEpGNQA6QD+Spalqx9ccAfwOah2J5RFVf9DMmY4ypbuZkZjFpwTo278qlWXIdJgxuy7CuKVW2/2hcPjpAVXeUsu4GYK2qDhGRRsA6Efm7qh6IQlzGGBPz5mRmcdfsVeQezAcga1cud81eBVBlySDooSEF6omIAEcDO4G8YEMyxpjYMWnBukNJoFDuwXwmLVhXZcfwOxEo8I6ILBeRcWHWPwW0BzYDq4CbVbWg+EYiMk5EMkQkIzs729+IjTEmhmzelVuu5RXhdyLoo6rdgHOBG0TkjGLrBwMrgGZAF+ApEalffCeqOlVV01Q1rVGjsHdIG2NMXGqWXKdcyyvC10SgqptDv7cD6UCPYptcCcxWZz3wDdDOz5iMMaY6mTC4LXVq1TxsWZ1aNZkwuG2VHcO3RCAidUWkXuFjYBCwuthm3wEDQ9s0BtoCG/yKyRhjqpthXVN4cHgnUpLrIEBKch0eHN6p2lw11BhId/PAJAGvqOp8ERkPoKpTgD8A00RkFSDAHRGuMDLGmIQ0rGtKlX7wF+dbIlDVDUBqmOVTijzejDtTMMYYU5oPP4T//Ad+/Wtfdh/05aPGGGMiWboUTj8dnnkG9u3z5RCWCIwxJtaowvr17vGpp8KUKbByJRx1lC+Hs0RgjDGx5NtvYcgQSE2FTZtABK69FurW9e2QlgiMMSYW5OXBY4/BKafA++/DH/8ITZtG5dDVrlWlMcZEm99F39i/H/r2hYwMOP98ePppaNGi6vZfBksExhgTga9F3/LyICkJjjgCBg+G22+HESPccFAU2dCQMcZE4FvRt3nzoG1bd1UQuKGgiy+OehIASwTGGBNRlRd927oVRo50Q0BHHBHIB39xlgiMMSaCKi36Nn06tG8P6elw//2QmekuDw2YJQJjjImgSou+bdniLgtduRLuvdedEcQASwTGGBNBpYq+7d8Pv/udOwMAmDABFi92cwMxxK4aMsaYMlSo6NuSJe5GsC++gFtvhQsvhJo1y35dAOyMIEa9/vrriAgZGRlh1//jH/+gc+fOdOjQgdtvv/3Q8m+//ZaBAwfSuXNn+vfvz3//+99D6+644w46duxIx44d+cc//nFo+emnn06XLl3o0qULzZo1Y9iwYZWO/5tvvqFnz560bt2aSy+9lAMHSrahXrFiBb169aJDhw507tz5sJjKev2yZcuoWbMmr7/++qFlu3btYsSIEbRr14727dvz8ccfV/rvMKbcfvgBrrkG+vWDn36C+fPh0UeDjioyVa1WP927d9d4t2fPHj399NO1Z8+eumzZshLrd+zYoSeccIJu375dVVXHjBmj7777rqqqjhgxQqdNm6aqqu+9955eccUVqqr61ltv6VlnnaUHDx7UvXv3avfu3XX37t0l9j18+HCdPn16xPjuu+8+ffHFFyNuc/HFF+uMGTNUVfXaa6/VZ555psQ269at0y+//FJVVbOysrRJkyb6ww8/lPn6vLw8HTBggJ577rk6c+bMQ8vHjBmjzz//vKqq7t+//9C+jImqV19VrVlTdcIE1b17g47mECBDS/lctTOCSrj33nt54oknDj2/5557mDx5cpXs9/bbb+fII48Mu37Dhg20adOGwradZ511FrNmzQJg7dq1DBw4EIABAwbwxhtvHFrer18/kpKSqFu3LqmpqcyfP/+w/ebk5LBo0aJKnxGoKosWLWLEiBEAjB07ljlz5pTYrk2bNrRu3RqAZs2acfzxx5OdnV3m65988kkuuugijj/++EPL9uzZw5IlS7jqqqsAqF27NsnJyeTl5XHqqafy/vvvA3DXXXdxzz33VOrvM6aEjRuh8P/RSy6BtWvh4Yd9rQ9UlSwRVMJVV13F9OnTASgoKODVV19l1KhRJbYrOvRS9Ofdd98tsW1mZiabNm3iggsuKPW4J598Ml988QUbN24kLy+POXPmsGnTJgBSU1MPJYX09HRycnL4/vvvSU1N5e2332bfvn3s2LGDxYsXH3pNofT0dAYOHEj9+iXaRpfL999/T3JyMklJbgrqZz/7GVlZWRFfs3TpUg4cOECrVq0ivj4rK4v09HTGjx9/2Os3bNhAo0aNuPLKK+natStXX301P/74I0lJSUybNo3rrruOhQsXMn/+fO67775K/X3GHJKXB488Ah06wPjxbihIBNq0CTqycvF1slhENgI5QD6Qp6ppxdZPAAo/OZOA9kAjVd3pZ1xVpWXLljRo0IDMzEy2bdtG165dadCgQYntPvjgA0/7Kygo4NZbb2XatGkRtzv22GN59tlnufTSS6lRowa9e/dmwwbX4fORRx7hV7/6FdOmTeOMM84gJSWFpKQkBg0axLJly+jduzeNGjWiV69ehz5oC82YMYOrr7467DFXrVrF6NGjAdi6dSu1a9fm8ccfB+C999477O92Z6GHkwg3zWzZsoXRo0czffp0atSoEfH1t9xyCw899BA1i0265eXl8emnn/Lkk0/Ss2dPbr75ZiZOnMgf/vAHOnTowOjRoxkyZAgff/wxtWvXLjUWYzzLyIBx49y9AD//OTz1FJRyFh/zShszqoofYCPQ0OO2Q4BFZW0Xa3MEr776qt500016ySWX6Ny5c8Nu07dvX01NTS3xs3DhwsO227VrlzZo0EBbtGihLVq00COOOEKbNm0adp6gqOeee04nTJhQYnlOTo6mpKSEfc1ll112WLw7duzQ4447TnNzc8v6k8ucIygoKNAGDRrowYMHVVX13//+tw4aNCjstrt379auXbvqa6+95un1LVu2PPT+1K1bVxs1aqTp6em6ZcsWbdGixaF9LFmyRM8777xDz0eOHKmNGzfWt99+u8y/z5gybdzo5gGaNlWdNUu1oCDoiMpEhDmCWEoErwDXlLVdrCWC/fv3a5s2bfTEE0/UvLy8Kt13v379Sk0C27ZtU1XVnTt3ampqqq5bt05VVbOzszU/P19VVe+++2699957VdVNsO7YsUNVVT/77DPt0KHDoQ9aVdVnn31Wx4wZ4ykuL5PFI0aMOGyy9+mnny6xzf79+/XMM8/Uxx57rEKvHzt27GGTxX379tUvvvjiUIy/+c1vVFV11qxZevbZZ+u6deu0devWNolsKm7Nmv89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"
+class="
+jp-needs-light-background
+"
+>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="The-calculus-of-the-regression-coefficients">The calculus of the regression coefficients<a class="anchor-link" href="#The-calculus-of-the-regression-coefficients">&#182;</a></h3><p>$Data(x_i, y_i) \quad i = 1,2,3,...,n$</p>
+<p>x = independant variable</p>
+<p>y = response (dependant variable)</p>
+<p>We want to create a line that goes through the data point, optimally:</p>
+<p>$y = \beta_0 + \beta_1x$</p>
+<p>Predicted values:</p>
+<p>$\hat{y_i} = \beta_0 + \beta_1x_i$</p>
+<p>$e_i = y_i - \hat{y_i}$ residual</p>
+<p>$S = \sum_i (y_i - \hat{y_i})^2$ the optimal line would be the minimum sum.</p>
+<p>$S = \sum_i (\beta_0 + \beta_1x_i - y_i)^2$</p>
+<p>$\frac{\delta S}{\delta \beta_0} = \sum_i 2(\beta_0 + \beta_1x_i - y_i) = 0$ (1)</p>
+<p>$\frac{\delta S}{\delta \beta_1} = \sum_i 2(\beta_0 + \beta_1x_i - y_i) x_i = 0$ (2)</p>
+<p>(1) :</p>
+<p>$\sum_i \beta_0 + \beta_1 \sum_i x_i - \sum_i y_i = n \beta_0 + \beta_1 n \bar{x} - n \bar{y} = 0$</p>
+<p>$\bar{x} = \frac{1}{n} \sum_i x_i$</p>
+<p>$\bar{x}^2 = \frac{1}{n} \sum_i x_i^2$</p>
+<p>$\bar{y} = \frac{1}{n} \sum_i y_i$</p>
+<p>$\Rightarrow \beta_0 = \bar{y} - \beta_1 \bar{x}$</p>
+<p>(2) :</p>
+<p>$\sum_i \beta_0 x_i + \sum_i \beta_1 x_i^2 - \sum_i x_i y_i = 0$</p>
+<p>$\beta_0 n \bar{x} + \beta_1 n\bar{x^2} - n \bar{xy} = 0$</p>
+<p>$\beta_0 \bar{x} + \beta_1 \bar{x^2}  = \bar{xy}$</p>
+<p>lets take $\beta_0$ and plug it in the second equation:</p>
+<p>$(\bar{y} - \beta_1 \bar{x}) \bar{x} + \beta_1 \bar{x}^2  = \bar{xy} \Rightarrow \bar{x} \bar{y} - \beta_1 (\bar{x})^2 + \beta_1 \bar{x^2} = \bar{xy}$</p>
+$$\beta_1 = \frac{\bar{xy} - \bar{x} \bar{y}}{\bar{x^2} - \bar{x}^2} \approx \frac{Cov(x,y)}{\sigma_x^2}$$$$\beta_0 = \bar{y} - \beta_1 \bar{x}$$<p>$\beta_1$ slope $\frac{dy}{dx}$</p>
+<p>$\beta_0$ intersect y(x = 0) = $\beta_0$</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span>
+  
+<span class="c1"># get the image</span>
+<span class="n">Image</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="s2">&quot;bestline.jpg&quot;</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<img src="bestline.jpg" width="400" height="300"/>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="The-least-square-method">The least square method<a class="anchor-link" href="#The-least-square-method">&#182;</a></h3><ul>
+<li>Points above the line have positive residuals, and points below the line have negative residuals.</li>
+<li>The closer the residuals are to O, the closer the fitted values are to the observations and the better the line fits the data.</li>
+<li>The line is fitted such that the sum of squared residuals is minimized. This is the least square method (see above)</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="The-connection-of-$%5Cbeta_1$-with-r">The connection of $\beta_1$ with r<a class="anchor-link" href="#The-connection-of-$%5Cbeta_1$-with-r">&#182;</a></h3><p>x, y random variables $\quad (x_i, y_i) \quad i = 1,2,3, ...,n$</p>
+<p>$rho(x,y) = \frac{Cov(x,y)}{\sigma_x \sigma_y} \approx r$ (r is the estimated coefficient from the data sample)</p>
+<p>$r = \frac{1}{n} \sum_i \frac{x_i - \bar{x}}{S_x} \frac{y_i \bar{y}}{S_y}$</p>
+<p>$S^2_x = \frac{1}{n - 1} \sum_i (x_i - \bar{x})^2$</p>
+<p>$S^2_y = \frac{1}{n - 1} \sum_i (y_i - \bar{y})^2$</p>
+<p>Another way to write r:</p>
+$$
+\begin{align}
+r &amp;= \frac{1}{n - 1} \frac{1}{S_x S_y} (\frac{S_x}{S_x}) \sum_i (x_i - \bar{x})(y_i \bar{y}) \\
+&amp;= \frac{S_x}{S_y} \frac{1}{n - 1} \frac{1}{S^2_x} \sum_i (x_i - \bar{x})(y_i - \bar{y}) \\
+&amp;= \frac{S_x}{S_y} \frac{1}{\sum_i (x_i - \bar{x})} \sum_i (x_i - \bar{x})(y_i - \bar{y}) \\ 
+&amp;= \frac{S_x}{S_y} \beta_1 \quad (have\,to\,prove)
+\end{align}
+$$$$\Rightarrow \beta_1 = r \frac{S_y}{S_x}$$<p>$\beta_1' = r \frac{S_x}{S_y}$ for the flipped data $\Rightarrow \beta_1 \beta_1' = r^2$</p>
+<p>$\beta_1' = \frac{r^2}{\beta_1}$</p>
+<p>check on spring result.</p>
+
+</div>
+</div>
+</div>
 </div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
 <div class="jp-Cell-inputWrapper">
@@ -23576,6 +23793,429 @@ t: 0.9245809673079826
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>We accept $H_0$, and thus conclude that the difference is less than 75mg/dL after the treatment.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-6.10.2">Problem 6.10.2<a class="anchor-link" href="#Problem-6.10.2">&#182;</a></h3>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>At an assembly plant for light trucks, routine monitoring of the quality of welds yields the following data (see table below):</p>
+<p>Can you conclude that the quality varies among shifts?</p>
+<p>a) State the appropriate null hypothesis.</p>
+<p>$D = 0$</p>
+<p>$H_0: D = 0$, there is no difference of quality between shifts.</p>
+<p>$H_1; D \neq 0$, there quality varies between shifts.</p>
+<p>Let's use a chi-squared test of homogenity</p>
+<p>b) Compute the expected values under the null hypothesis.</p>
+<p>c) Compute the value of the chi-square statistic.</p>
+<p>d) Find the P-value. What do you conclude?</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2_contingency</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/Ch6/ex6-10-2.csv&quot;</span><span class="p">)</span>
+
+<span class="n">info</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s2">&quot;High Quality&quot;</span><span class="p">,</span> <span class="s2">&quot;Moderate Quality&quot;</span><span class="p">,</span><span class="s2">&quot;Low Quality&quot;</span><span class="p">]])</span>
+
+<span class="n">chi_stat</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">p_val</span> <span class="o">=</span> <span class="n">info</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Expected Matrix:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">info</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">chi-square statistic: </span><span class="si">{</span><span class="n">chi_stat</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value: </span><span class="si">{</span><span class="n">p_val</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Expected Matrix:
+[[466.4        196.4         37.2       ]
+ [433.08571429 182.37142857  34.54285714]
+ [266.51428571 112.22857143  21.25714286]]
+
+chi-square statistic: 5.76044648212817
+p-value: 0.21776679146359837
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Since the p-value &gt; 0.05 we accept $H_0$ and thus conclude that the quality doesn't vary between shifts</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-6.10.3">Problem 6.10.3<a class="anchor-link" href="#Problem-6.10.3">&#182;</a></h3><p>Each respondent was categorized by gender and income level. The numbers in each category (calculated from percentages given in the article) are presented in the following table.
+Can you conclude that the proportions in the various income categories differ between men and women?</p>
+<p>$H_0:$ The proportions in the various income categories doesn't differ between men and women (D = 0)</p>
+<p>$H_1:$ The proporiton in the various income coatgories differ between men and women ($D \neq 0$)</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> 
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2_contingency</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/Ch6/ex6-10-3.csv&quot;</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">))</span>
+
+<span class="n">p_val</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value: </span><span class="si">{</span><span class="n">p_val</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>108.35339147159317
+p-value: 1.6334870030348423e-22
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>We reject $H_0$ since p &lt; 0.05 is significantly lower. It differs between men and women.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-6.10.4">Problem 6.10.4<a class="anchor-link" href="#Problem-6.10.4">&#182;</a></h3><p>The article “Analysis of Time Headways on Urban Roads: Case Study from Riyadh” (A. Al-Ghamdi, Journal of Transportation Engineering, 2001:289–294) presents a model for the time elapsed between the arrival of consecutive vehicles on urban roads. Following are 137 arrival times (in seconds) along with the values expected from a theoretical model.</p>
+<p>Can you conclude that the theoretical model does not explain the observed values well?</p>
+<p>$H_0:$ the theoretical model does explain thte observed values</p>
+<p>$H_1:$ the theoretical model doesn't explain thte observed values</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chisquare</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/Ch6/ex6-10-4.csv&quot;</span><span class="p">)</span>
+
+
+<span class="n">x</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="n">chisquare</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Observed&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Expected&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value: </span><span class="si">{</span><span class="n">p</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>21.47460834360148
+p-value: 0.005988018189390258
+</pre>
+</div>
+</div>
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Time</th>
+      <th>Observed</th>
+      <th>Expected</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0 to 2</td>
+      <td>18</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2 to 4</td>
+      <td>28</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4 to 6</td>
+      <td>14</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>6 to 8</td>
+      <td>7</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>8 to 10</td>
+      <td>11</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>10 to 12</td>
+      <td>11</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>12 to 18</td>
+      <td>10</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>18 to 22</td>
+      <td>8</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>&gt;22</td>
+      <td>30</td>
+      <td>19</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Since the p value is significantly &lt; 0.05 we reject $H_0$, and conclude the theoretical model doesn't explain the data.</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h3 id="Problem-6.10.12">Problem 6.10.12<a class="anchor-link" href="#Problem-6.10.12">&#182;</a></h3><p>Following are the numbers of workers reporting various symptoms, categorized by work shift. The numbers were read from a graph.</p>
+<p>Can you conclude that the proportions of workers with the various symptoms differ among the shifts?</p>
+<p>$H_0:$ the symptoms do not differ between shifts (D = 0)</p>
+<p>$H_1:$ the symptoms do not differ between shifts ($D \neq 0$)</p>
+
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">chi2_contingency</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;datasets/Ch6/ex6-10-12.csv&quot;</span><span class="p">)</span>
+
+<span class="n">results</span> <span class="o">=</span> <span class="n">chi2_contingency</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="s2">&quot;Unnamed: 0&quot;</span><span class="p">))</span>
+
+<span class="n">p_value</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p-value:</span><span class="si">{</span><span class="n">p_value</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>p-value:0.007397040450634263
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Since the p-value is significantly lower than &lt; 0.05 we reject $H_0$ and thus conclude that the symptoms differ between shifts.</p>
 
 </div>
 </div>
