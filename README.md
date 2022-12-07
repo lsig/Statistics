@@ -1,1 +1,1 @@
-# Notes from Statistics for engineers and scientists
+## Notes from Statistics for engineers and scientists
